@@ -1,0 +1,24 @@
+# Experimental low-memory profile. Build image on another machine.
+services:
+  khoorooth-router:
+    image: decolua/9router:latest
+    container_name: khoorooth-router
+    restart: unless-stopped
+    ports:
+      - "20128:20128"
+    volumes:
+      - khoorooth-router-data:/app/data
+    env_file: [.env]
+    environment:
+      DATA_DIR: /app/data
+      PORT: "20128"
+      HOSTNAME: "0.0.0.0"
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      NODE_OPTIONS: "--max-old-space-size=72 --max-semi-space-size=4"
+    mem_limit: 128m
+    mem_reservation: 96m
+    # Do not run bundled Headroom on this tiny host; configure HEADROOM_URL externally.
+volumes:
+  khoorooth-router-data:
+    name: khoorooth-router-data
