@@ -11,6 +11,10 @@ const origCreate = http.createServer.bind(http);
 // header even though the env var is inherited by child processes. Named like x-9r-cli-token
 // so the request-detail header sanitizer redacts it too.
 const PEER_TOKEN = crypto.randomBytes(24).toString("hex");
+// Optional request-body ceiling for the h2c downgrade compatibility path.
+// Set KHOROOTH_H2C_MAX_BODY_BYTES in tiny-memory deployments to prevent
+// buffering arbitrarily large bodies in RAM. Default preserves legacy behavior.
+const H2C_MAX_BODY_BYTES = Number.parseInt(process.env.KHOROOTH_H2C_MAX_BODY_BYTES || "0", 10);
 process.env.NINEROUTER_PEER_TOKEN = PEER_TOKEN;
 
 let backgroundRefreshStarted = false;
