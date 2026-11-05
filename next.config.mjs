@@ -8,6 +8,8 @@ const tracingRoot = process.env.NEXT_TRACING_ROOT_MODE === "workspace"
   ? join(projectRoot, "..")
   : projectRoot;
 const proxyClientMaxBodySize = process.env.NINEROUTER_PROXY_CLIENT_MAX_BODY_SIZE || "128mb";
+// Reduce startup RSS on constrained deployments. This does not change build-time memory.
+const lowMemoryMode = process.env.KHOROOTH_LOW_MEMORY === "1";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -38,6 +40,8 @@ const nextConfig = {
   },
   env: {},
   experimental: {
+    // Khoorooth low-memory profile: avoid eagerly loading every route at startup.
+    ...(lowMemoryMode ? { preloadEntriesOnStart: false } : {}),
     // #1529/#1572: LLM clients can send long context or base64 image payloads through /v1 rewrites.
     proxyClientMaxBodySize,
     // Cache fetch responses across HMR refreshes for faster dev reloads.

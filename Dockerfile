@@ -60,7 +60,7 @@ RUN if [ "$ALPINE_MIRROR" != "dl-cdn.alpinelinux.org" ]; then \
       sed -i "s|dl-cdn.alpinelinux.org|${ALPINE_MIRROR}|g" /etc/apk/repositories; \
     fi
 
-LABEL org.opencontainers.image.title="9router" \
+LABEL org.opencontainers.image.title="Khoorooth Router" \
       org.opencontainers.image.version="${APP_VERSION}"
 
 ENV NODE_ENV=production

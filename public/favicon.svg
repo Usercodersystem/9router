@@ -1,11 +1,1 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="url(#gradient)"/>
-  <text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="white" text-anchor="middle">9</text>
-  <defs>
-    <linearGradient id="gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f97815"/>
-      <stop offset="1" stop-color="#c2590a"/>
-    </linearGradient>
-  </defs>
-</svg>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Khoorooth Router rooster logo"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff9b35"/><stop offset="1" stop-color="#c94c13"/></linearGradient></defs><rect width="128" height="128" rx="28" fill="#151923"/><path d="M31 91c7-9 9-19 8-29-1-10 5-19 14-22l-3-12 12 7 8-12 5 15c13 2 22 12 23 25l13 7-13 4c-2 10-10 17-21 19l-2 12H43l-2-10z" fill="url(#bg)"/><path d="M55 47c-7-3-8-10-4-15 7 1 11 6 11 12M66 40c-2-8 2-14 9-15 5 6 4 12-2 17" fill="#ffbd65"/><circle cx="78" cy="55" r="4" fill="#fff"/><circle cx="79" cy="55" r="2" fill="#151923"/><path d="M89 63l17 5-17 6z" fill="#ffe08a"/><path d="M52 92l-8 14h15l5-13m8 0 4 13h14l-8-15" fill="#f3a34a"/></svg>
